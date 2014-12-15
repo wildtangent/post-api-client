@@ -2,15 +2,15 @@
 module Post
   module Api
     module Client
-      class Client
-        
+      class Shortener
+
         @@api_url = "http://po.st/"
 
         def initialize(api_key)
           @api_key = api_key
           @connection = Connection.new(@@api_url)
         end
-        
+
         def shorten(params={})
           params.merge!(default_params)
           @connection.get("/api/shorten", params).body
@@ -28,19 +28,19 @@ module Post
             @connection.get("/api/customize", params).body
           end
         end
-        
+
         def expand(params={})
           params.merge!(default_params)
           @connection.get("/api/expand", params)
         end
-        
+
         private
         def default_params
           {
             apiKey: @api_key
           }
         end
-        
+
       end
     end
   end
