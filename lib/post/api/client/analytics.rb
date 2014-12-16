@@ -14,22 +14,22 @@ module Post
 
         def daily(params={})
           params.merge!(default_params)
-          @connection.get(path("/daily"), params).body['rows']
+          @connection.get(path("/daily"), params).body
         end
 
         def content(params={})
           params.merge!(default_params)
-          @connection.get(path("/content"), params).body['rows']
+          @connection.get(path("/content"), params).body
         end
 
         def services(params={})
           params.merge!(default_params)
-          @connection.get(path("/services"), params).body['rows']
+          @connection.get(path("/services"), params).body
         end
 
         def country(params={})
           params.merge!(default_params)
-          @connection.get(path("/country"), params).body['rows']
+          @connection.get(path("/country"), params).body
         end
 
         private

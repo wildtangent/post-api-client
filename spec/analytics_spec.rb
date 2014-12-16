@@ -29,7 +29,7 @@ describe Post::Api::Client::Analytics do
 
 
   it 'should get daily analytics' do
-    result = analytics.daily(params)
+    result = analytics.daily(params)['rows']
     expect(result.first).to eq(
       "date" => "2014-12-10",
       "clicks" => 622,
@@ -38,7 +38,7 @@ describe Post::Api::Client::Analytics do
   end
 
   it 'should get content analytics' do
-    result = analytics.content(params)
+    result = analytics.content(params)['rows']
     expect(result.first).to eq(
       "url" => "http://bikemagic.com/how-to/mountain-bike-maintenance/replace-your-bottom-bracket.html",
       "clicks" => 0,
@@ -47,7 +47,7 @@ describe Post::Api::Client::Analytics do
   end
 
   it 'should get services analytics' do
-    result = analytics.services(params)
+    result = analytics.services(params)['rows']
     expect(result.first).to eq(
       "service" => "Copy text",
       "serviceCode" => "clipboard",
@@ -57,7 +57,7 @@ describe Post::Api::Client::Analytics do
   end
 
   it 'should get country analytics' do
-    result = analytics.country(params)
+    result = analytics.country(params)['rows']
     expect(result.first).to eq(
       "clicks" => 314,
       "country" => "United Kingdom",
