@@ -19,7 +19,7 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-client = Post::Api::Client::Client.new("YOUR_API_KEY")
+client = Post::Api::Client::Shortener.new("YOUR_API_KEY")
 
 shortener = client.shorten(
   longUrl: "http://mywebsite.com/mylongurl"
